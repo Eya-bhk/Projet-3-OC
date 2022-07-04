@@ -1,4 +1,101 @@
-.fa-heart {
+/*global rules*/
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+body {
+    font-family: "Roboto", sans-serif;
+}
+h1,
+h2,
+h3 {
+    font-family: "Shrikhand", cursive;
+}
+.fa-heart,
+.fa-solid {
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
+}
+.container {
+    width: 100%;
+}
+ul,
+ol {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+h1 {
+    font-size: 20px;
+}
+h2 {
+    font-size: 12px;
+}
+h3 {
+    font-size: 8px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+img {
+    object-fit: cover;
+}
+
+/*header*/
+header {
+    height: 8vh;
+}
+header img {
+    width: 37vw;
+    display: block;
+    margin: auto;
+    padding: 10px 0;
+}
+/*end header*/
+/* main*/
+/*section presentation*/
+main {
+    background-color: #f6f6f6;
+}
+aside {
+    background-color: white;
+}
+.presentation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+input {
+    width: 64%;
+    height: 7vh;
+    text-align: left;
+    background-color: #eaeaea;
+    color: black;
+    font-weight: bold;
+    border: none;
+}
+form {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    filter: drop-shadow(16px 16px 10px black);
+}
+form::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: bold;
+    content: "\f3c5";
+    position: absolute;
+    background-color: #eaeaea;
+    left: 0;
+    top: 0;
+    width: 36%;
+    height: 7vh;
+    padding-right: 1%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
