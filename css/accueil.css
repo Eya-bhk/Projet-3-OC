@@ -7,11 +7,6 @@
 body {
     font-family: "Roboto", sans-serif;
 }
-h1,
-h2,
-h3 {
-    font-family: "Shrikhand", cursive;
-}
 .fa-heart,
 .fa-solid {
     font-family: "Font Awesome 6 Free";
@@ -28,10 +23,13 @@ ol {
 }
 
 h1 {
-    font-size: 20px;
+    font-size: 6vw;
+    padding: 0 16vw;
+    text-align: center;
+    font-weight: 900;
 }
 h2 {
-    font-size: 12px;
+    font-size: 19px;
 }
 h3 {
     font-size: 8px;
@@ -60,13 +58,12 @@ header img {
 main {
     background-color: #f6f6f6;
 }
-aside {
-    background-color: white;
-}
+
 .presentation {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-bottom: 67px;
 }
 input {
     width: 64%;
@@ -82,7 +79,6 @@ form {
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-end;
-    filter: drop-shadow(16px 16px 10px black);
 }
 form::before {
     font-family: "Font Awesome 6 Free";
@@ -98,4 +94,79 @@ form::before {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+}
+.presentation p {
+    margin-top: -10px;
+    text-align: center;
+    padding: 0 10px;
+    font-weight: 300;
+}
+button {
+    width: 212px;
+    height: 62px;
+    color: white;
+    font-weight: bold;
+    margin: auto;
+    border-radius: 31px;
+    border: none;
+    background-color: #9356dc;
+    box-shadow: 2px 5px 5px 3px #8080803d;
+    background-image: linear-gradient(174deg, #ff79da, transparent);
+}
+/*aside start*/
+aside {
+    background-color: white;
+    padding: 65px 24px;
+}
+aside ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 272px;
+}
+aside li {
+    width: 290px;
+    height: 77px;
+    margin: 0 auto;
+    background-color: #f6f6f6;
+    border-radius: 31px;
+    box-shadow: 2px 5px 5px 3px #8080803d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+.fa-1,
+.fa-2,
+.fa-3 {
+    width: 19px;
+    height: 19px;
+    text-align: center;
+    color: white;
+    background-color: #9356dc;
+    border-radius: 50%;
+    transform: translate(-44px, 0);
+}
+.header-icons .fa-solid {
+    margin-right: 25px;
+    color: grey;
+}
+/*Cartes start*/
+.cartes {
+    padding: 21px 24px;
+}
+.cartes a {
+    width: 100%;
+}
+.cartes figure {
+    width: 326px;
+    height: 311px;
+    background-color: white;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+.cartes img {
+    width: 100%;
+    height: 200px;
+    border-radius: 13px;
 }
