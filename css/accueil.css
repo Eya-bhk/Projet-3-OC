@@ -7,11 +7,11 @@
 body {
     font-family: "Roboto", sans-serif;
 }
-.fa-heart,
+/*.fa-heart,
 .fa-solid {
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
-}
+}*/
 .container {
     width: 100%;
 }
@@ -32,7 +32,8 @@ h2 {
     font-size: 19px;
 }
 h3 {
-    font-size: 8px;
+    font-size: 16px;
+    margin-bottom: -11px;
 }
 a {
     text-decoration: none;
@@ -47,7 +48,7 @@ header {
     height: 8vh;
 }
 header img {
-    width: 37vw;
+    width: 42vw;
     display: block;
     margin: auto;
     padding: 10px 0;
@@ -66,34 +67,24 @@ main {
     margin-bottom: 67px;
 }
 input {
-    width: 64%;
+    width: 100%;
     height: 7vh;
-    text-align: left;
+    text-align: center;
     background-color: #eaeaea;
     color: black;
     font-weight: bold;
     border: none;
+}
+.fa-location-dot {
+    position: absolute;
+    left: 29%;
+    top: 25%;
 }
 form {
     position: relative;
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-end;
-}
-form::before {
-    font-family: "Font Awesome 6 Free";
-    font-weight: bold;
-    content: "\f3c5";
-    position: absolute;
-    background-color: #eaeaea;
-    left: 0;
-    top: 0;
-    width: 36%;
-    height: 7vh;
-    padding-right: 1%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
 }
 .presentation p {
     margin-top: -10px;
@@ -103,7 +94,7 @@ form::before {
 }
 button {
     width: 212px;
-    height: 62px;
+    height: 50px;
     color: white;
     font-weight: bold;
     margin: auto;
@@ -125,8 +116,8 @@ aside ul {
     height: 272px;
 }
 aside li {
-    width: 290px;
-    height: 77px;
+    width: 325px;
+    height: 75px;
     margin: 0 auto;
     background-color: #f6f6f6;
     border-radius: 31px;
@@ -136,16 +127,31 @@ aside li {
     align-items: center;
     font-weight: bold;
 }
+aside li:hover {
+    background-color: #ce56dc1f;
+}
+aside li:hover .header-icons i {
+    color: #9356dc;
+}
+aside li span {
+    width: 243px;
+}
 .fa-1,
 .fa-2,
 .fa-3 {
-    width: 19px;
-    height: 19px;
+    width: 22px;
+    height: 23px;
     text-align: center;
     color: white;
     background-color: #9356dc;
     border-radius: 50%;
-    transform: translate(-44px, 0);
+    transform: translate(-41px, 0);
+}
+.fa-1:before,
+.fa-2:before,
+.fa-3:before {
+    line-height: 20px;
+    vertical-align: middle;
 }
 .header-icons .fa-solid {
     margin-right: 25px;
@@ -155,18 +161,85 @@ aside li {
 .cartes {
     padding: 21px 24px;
 }
-.cartes a {
-    width: 100%;
-}
 .cartes figure {
-    width: 326px;
-    height: 311px;
+    width: 334px;
+    height: 255px;
     background-color: white;
     border-radius: 12px;
     margin: 20px 0;
+    box-shadow: 2px 5px 5px 3px #8080803d;
 }
 .cartes img {
     width: 100%;
-    height: 200px;
+    height: 175px;
     border-radius: 13px;
+    position: relative;
+}
+.cartes .new-card::before {
+    content: "Nouveau";
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+    width: 80px;
+    height: 30px;
+    background-color: #99e2d0;
+    color: #296557;
+    font-weight: bold;
+    font-size: 15px;
+    position: absolute;
+    z-index: 2;
+    border-radius: 3px;
+    transform: translate(242px, 14px);
+}
+figcaption {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 18px 7px 10px;
+}
+.fa-heart {
+    color: white;
+    text-shadow: 0px 0px 1px black;
+    /*transition: color 1s ease 0s;*/
+}
+.fa-heart:active {
+    color: #9356dc;
+    animation-name: filling-heart;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+}
+/*footer start*/
+footer h2 {
+    font-family: "Shrikhand", cursive;
+    font-size: 18px;
+    font-weight: 400;
+}
+footer {
+    background-color: #353535;
+    color: white;
+    padding: 10px 0 20px 15px;
+}
+footer ul {
+    font-size: 14px;
+    line-height: 2;
+}
+footer li .fa-solid {
+    margin-right: 10px;
+    font-size: 12px;
+    width: 12px;
+}
+footer a {
+    color: white;
+}
+@keyframes filling-heart {
+    0% {
+        color: white;
+    }
+    50% {
+        color: #ff79da;
+    }
+    100% {
+        color: #9356dc;
+    }
 }
