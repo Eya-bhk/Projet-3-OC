@@ -1,0 +1,278 @@
+/*global rules*/
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+}
+ul,
+ol {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+h1 {
+    font-family: "Shrikhand", cursive;
+    font-size: 8vw;
+    padding-top: 18px;
+    text-align: left;
+    font-weight: 900;
+}
+h2 {
+    font-size: 17px;
+    text-transform: uppercase;
+    color: #0000007a;
+    position: relative;
+}
+h3 {
+    font-size: 16px;
+    margin-bottom: -11px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+img {
+    object-fit: cover;
+}
+.fa-solid {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+/*header*/
+header {
+    height: 50px;
+}
+header div {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+.fa-arrow-left {
+    color: grey;
+}
+header img {
+    width: 165px;
+    display: block;
+    margin: auto;
+    padding: 10px 0;
+}
+/*end header*/
+/*main start*/
+main {
+    margin-top: -47px;
+    background-color: #f6f6f6;
+    border-top-left-radius: 34px;
+    border-top-right-radius: 34px;
+    z-index: 2;
+    width: 100%;
+}
+.container img {
+    height: 250px;
+    width: 100%;
+}
+.title {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.heart :first-child {
+    font-size: 20.8px;
+    color: white;
+    transform: translate(26.5px, -1px);
+}
+.heart :last-child {
+    color: black;
+    font-size: 24px;
+}
+
+main section {
+    padding: 15px;
+}
+
+main h2::after {
+    content: "";
+    width: 40px;
+    height: 3px;
+    background-color: #99e2d0;
+    position: absolute;
+    top: 25px;
+    left: 0;
+}
+section li {
+    width: 350px;
+    height: 70px;
+    padding-left: 20px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 2px 7px -2px #f6f6f6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 17px;
+    position: relative;
+}
+section li p {
+    opacity: 0.6;
+}
+.entree h2 {
+    animation-name: list-advent;
+    animation-duration: 0.2s;
+    animation-delay: 0.2s;
+    animation-fill-mode: both;
+    animation-timing-function: ease;
+}
+.entree li {
+    animation-name: list-advent, list-translate;
+    animation-duration: 1s;
+    animation-delay: 0.4s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+}
+.principal-dish h2 {
+    animation-name: list-advent;
+    animation-duration: 0.2s;
+    animation-delay: 1.4s;
+    animation-fill-mode: both;
+    animation-timing-function: ease;
+}
+.principal-dish li {
+    animation-name: list-advent, list-translate;
+    animation-duration: 1s;
+    animation-delay: 1.6s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+}
+.sweet h2 {
+    animation-name: list-advent;
+    animation-duration: 0.2s;
+    animation-delay: 2.6s;
+    animation-fill-mode: both;
+    animation-timing-function: ease;
+}
+.sweet li {
+    animation-name: list-advent, list-translate;
+    animation-duration: 1s;
+    animation-delay: 2.8s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+}
+section li div {
+    width: 70%;
+}
+.entree-price,
+.dish-price,
+.sweet-price {
+    margin: 0 20px;
+    transition: all 1s 0s ease;
+}
+section li:hover .entree-price,
+section li:hover .dish-price,
+section li:hover .sweet-price {
+    transform: translate(-60px, 0px);
+    margin: 5px;
+    padding: 5px;
+}
+main li > :last-child {
+    width: 0px;
+    height: 70px;
+    background-color: #99e2d0;
+    color: transparent;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    text-align: center;
+    align-items: center;
+    line-height: 70px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: all 1s 0s ease;
+}
+section li:hover > :last-child {
+    width: 60px;
+    color: white;
+}
+.fa-circle-check {
+    transform: rotate(-180deg);
+    animation-name: icon-rotate;
+    animation-duration: 0.2s;
+    animation-delay: 0.5s;
+    animation-fill-mode: both;
+}
+section li:hover > div h3 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+section li:hover > div p {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-right: 5px;
+}
+button {
+    width: 186px;
+    height: 50px;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    display: block;
+    margin: 50px auto 85px;
+    border-radius: 31px;
+    border: none;
+    background-color: #9356dc;
+    box-shadow: 2px 5px 5px 3px #8080803d;
+    background-image: linear-gradient(174deg, #ff79da, #9356dc);
+}
+/*footer start*/
+footer h2 {
+    font-family: "Shrikhand", cursive;
+    font-size: 18px;
+    color: white;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+footer {
+    background-color: #353535;
+    color: white;
+    padding: 10px 0 20px 15px;
+}
+footer ul {
+    font-size: 14px;
+    line-height: 2;
+}
+footer li .fa-solid {
+    margin-right: 10px;
+    font-size: 12px;
+    width: 12px;
+}
+footer a {
+    color: white;
+}
+@keyframes list-advent {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes list-translate {
+    100% {
+        transform: translate(0px, -5px);
+    }
+}
+@keyframes icon-rotate {
+    100% {
+        transform: rotate(0deg, 180deg);
+    }
+}
