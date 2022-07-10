@@ -7,11 +7,11 @@
 body {
     font-family: "Roboto", sans-serif;
 }
-/*.fa-heart,
+.fa-heart,
 .fa-solid {
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
-}*/
+}
 .container {
     width: 100%;
 }
