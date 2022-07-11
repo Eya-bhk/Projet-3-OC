@@ -4,16 +4,67 @@
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
 }
+html,
 body {
     font-family: "Roboto", sans-serif;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    animation-name: body-set;
+    animation-duration: 0s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+@keyframes body-set {
+    100% {
+        position: unset;
+        overflow: visible;
+    }
+}
+.loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #eaeaea;
+    z-index: 1;
+    animation-name: spinner-disappear;
+    animation-duration: 0s;
+    animation-delay: 2.2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+@keyframes spinner-disappear {
+    100% {
+        position: unset;
+    }
+}
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.loader-circle {
+    width: 100px;
+    height: 100px;
+    margin: 20vw auto;
+    border-radius: 50%;
+    border: 5px solid #eee;
+    border-left-color: #ff79da;
+    border-right-color: #ff79da;
+    animation-name: loader-spin;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
 }
 .fa-heart,
 .fa-solid {
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
-}
-.container {
-    width: 100%;
 }
 ul,
 ol {
@@ -232,6 +283,19 @@ footer li .fa-solid {
 footer a {
     color: white;
 }
+
+/*.loader-circle {
+    width: 100px;
+    height: 100px;
+    margin: 20vw auto;
+    border-radius: 50%;
+    border: 3px solid #9356dc;
+    border-left-color: transparent;
+    animation-name: loader-spin;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: 2;
+}*/
 @keyframes filling-heart {
     0% {
         color: white;
@@ -241,5 +305,13 @@ footer a {
     }
     100% {
         color: #9356dc;
+    }
+}
+@keyframes loader-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }

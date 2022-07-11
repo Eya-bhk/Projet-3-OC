@@ -178,35 +178,42 @@ section li div {
 section li:hover .entree-price,
 section li:hover .dish-price,
 section li:hover .sweet-price {
-    transform: translate(-60px, 0px);
+    transform: translate(-10px, 0px);
     margin: 5px;
     padding: 5px;
 }
-main li > :last-child {
+main li .check {
     width: 0px;
     height: 70px;
-    background-color: #99e2d0;
-    color: transparent;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    line-height: 70px;
-    position: absolute;
+    color: white;
+    overflow: hidden;
+    background-color: none;
+    border-radius: 0 20px 20px 0;
+    position: relative;
     right: 0;
     top: 0;
     transition: all 1s 0s ease;
 }
-section li:hover > :last-child {
-    width: 60px;
+.check::before {
+    content: "";
     color: white;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 15px;
+    height: 15px;
+    transition: all 1s 0s ease;
 }
-.fa-circle-check {
-    transform: rotate(-180deg);
-    animation-name: icon-rotate;
-    animation-duration: 0.2s;
-    animation-delay: 0.5s;
-    animation-fill-mode: both;
+main li:hover > .check {
+    width: 60px;
+    background-color: #99e2d0;
+}
+section li:hover > .check i {
+    animation: icon-rotate 1s 0s ease;
+    animation-fill-mode: forwards;
 }
 section li:hover > div h3 {
     white-space: nowrap;
@@ -272,7 +279,10 @@ footer a {
     }
 }
 @keyframes icon-rotate {
+    0% {
+        transform: rotate(-180deg);
+    }
     100% {
-        transform: rotate(0deg, 180deg);
+        transform: rotate(1turn);
     }
 }
