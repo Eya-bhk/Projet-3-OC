@@ -175,9 +175,9 @@ section li div {
     margin: 0 20px;
     transition: all 1s 0s ease;
 }
-section li:hover .entree-price,
-section li:hover .dish-price,
-section li:hover .sweet-price {
+section li:active .entree-price,
+section li:active .dish-price,
+section li:active .sweet-price {
     transform: translate(-10px, 0px);
     margin: 5px;
     padding: 5px;
@@ -207,20 +207,20 @@ main li .check {
     height: 15px;
     transition: all 1s 0s ease;
 }
-main li:hover > .check {
+main li:active > .check {
     width: 60px;
     background-color: #99e2d0;
 }
-section li:hover > .check i {
+section li:active > .check i {
     animation: icon-rotate 1s 0s ease;
     animation-fill-mode: forwards;
 }
-section li:hover > div h3 {
+section li:active > div h3 {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
 }
-section li:hover > div p {
+section li:active > div p {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -284,5 +284,37 @@ footer a {
     }
     100% {
         transform: rotate(1turn);
+    }
+}
+/*tablettes*/
+@media only screen and (min-width: 768px) {
+}
+/*desktop*/
+@media only screen and (min-width: 992px) {
+    section li:hover .entree-price,
+    section li:hover .dish-price,
+    section li:hover .sweet-price {
+        transform: translate(-10px, 0px);
+        margin: 5px;
+        padding: 5px;
+    }
+    main li:hover > .check {
+        width: 60px;
+        background-color: #99e2d0;
+    }
+    section li:hover > .check i {
+        animation: icon-rotate 1s 0s ease;
+        animation-fill-mode: forwards;
+    }
+    section li:hover > div h3 {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    section li:hover > div p {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        margin-right: 5px;
     }
 }
