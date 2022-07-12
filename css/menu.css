@@ -115,10 +115,12 @@ section li {
     background-color: white;
     border-radius: 20px;
     box-shadow: 0px 2px 7px -2px #f6f6f6;
+    margin-top: 17px;
+}
+section li a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 17px;
     position: relative;
 }
 section li p {
@@ -131,7 +133,7 @@ section li p {
     animation-fill-mode: both;
     animation-timing-function: ease;
 }
-.entree li {
+.entree li a {
     animation-name: list-advent, list-translate;
     animation-duration: 1s;
     animation-delay: 0.4s;
@@ -175,14 +177,14 @@ section li div {
     margin: 0 20px;
     transition: all 1s 0s ease;
 }
-section li:active .entree-price,
-section li:active .dish-price,
-section li:active .sweet-price {
+section li a:active .entree-price,
+section li a:active .dish-price,
+section li a:active .sweet-price {
     transform: translate(-10px, 0px);
     margin: 5px;
     padding: 5px;
 }
-main li .check {
+main li a .check {
     width: 0px;
     height: 70px;
     display: flex;
@@ -207,20 +209,20 @@ main li .check {
     height: 15px;
     transition: all 1s 0s ease;
 }
-main li:active > .check {
+main li a:active > .check {
     width: 60px;
     background-color: #99e2d0;
 }
-section li:active > .check i {
+section li a:active > .check i {
     animation: icon-rotate 1s 0s ease;
     animation-fill-mode: forwards;
 }
-section li:active > div h3 {
+section li a:active > div h3 {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
 }
-section li:active > div p {
+section li a:active > div p {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -288,30 +290,56 @@ footer a {
 }
 /*tablettes*/
 @media only screen and (min-width: 768px) {
+    header img {
+        margin: 0;
+        padding: 10px;
+    }
+    .container img {
+        height: 380px;
+    }
+    .heart :first-child {
+        font-size: 47.8px;
+        color: white;
+        transform: translate(53px, -1px);
+    }
+    .heart :last-child {
+        color: black;
+        font-size: 50px;
+    }
+    section li {
+        width: 80%;
+        margin: 17px auto;
+    }
 }
 /*desktop*/
 @media only screen and (min-width: 992px) {
-    section li:hover .entree-price,
-    section li:hover .dish-price,
-    section li:hover .sweet-price {
+    header div {
+        justify-content: flex-start;
+    }
+    h1 {
+        font-size: 5vw;
+    }
+    section li a:hover .entree-price,
+    section li a:hover .dish-price,
+    section li a:hover .sweet-price {
         transform: translate(-10px, 0px);
         margin: 5px;
         padding: 5px;
     }
-    main li:hover > .check {
+    main li a:hover > .check {
         width: 60px;
         background-color: #99e2d0;
     }
-    section li:hover > .check i {
+    section li a:hover > .check i {
         animation: icon-rotate 1s 0s ease;
         animation-fill-mode: forwards;
     }
-    section li:hover > div h3 {
+    section li a:hover > div h3 {
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
     }
-    section li:hover > div p {
+    section li a:hover > div p {
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;

@@ -47,6 +47,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+    padding-top: 20px;
+    background-color: #f6f6f6;
 }
 .loader-circle {
     width: 100px;
@@ -93,7 +95,6 @@ a {
 img {
     object-fit: cover;
 }
-
 /*header*/
 header {
     height: 8vh;
@@ -110,7 +111,6 @@ header img {
 main {
     background-color: #f6f6f6;
 }
-
 .presentation {
     display: flex;
     flex-direction: column;
@@ -179,7 +179,8 @@ aside li {
     font-weight: bold;
 }
 aside li:hover {
-    background-color: #ce56dc1f;
+    background-color: #9356dc0f;
+    box-shadow: 2px 5px 5px 3px #80808054;
 }
 aside li:hover .header-icons i {
     color: #9356dc;
@@ -285,10 +286,20 @@ footer a {
 }
 @keyframes filling-heart {
     0% {
-        color: white;
+        color: #ff79da;
+        opacity: 0;
+    }
+    25% {
+        color: #ff79da;
+        opacity: 0.5;
     }
     50% {
         color: #ff79da;
+        opacity: 0.8;
+    }
+    70% {
+        color: #9356dc;
+        opacity: 0.8;
     }
     100% {
         color: #9356dc;
@@ -304,12 +315,104 @@ footer a {
 }
 /*tablettes*/
 @media only screen and (min-width: 768px) {
+    h1 {
+        font-size: 3vw;
+        padding: 0;
+        text-align: left;
+    }
+    header {
+        height: 5vh;
+        background-color: #eaeaea;
+        float: left;
+    }
+    header img {
+        width: 12vw;
+        padding: 10px;
+        margin: 0;
+    }
+    form {
+        position: relative;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-end;
+        width: 100%;
+        background-color: #eaeaea;
+    }
+    input {
+        width: 30%;
+        height: 5vh;
+        text-align: left;
+        border-radius: 20px;
+        padding: 10px;
+        margin-right: 3vw;
+        border: 1px solid grey;
+    }
+    .fa-location-dot {
+        visibility: hidden;
+    }
+    .presentation p {
+        font-size: 20px;
+        margin-top: -17px;
+        text-align: left;
+        padding: 0 10px;
+    }
+    button {
+        margin: 0;
+    }
+    .cartes {
+        padding: 21px 10px;
+    }
+    .cartes figure {
+        width: 75%;
+        height: 313px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        background-color: white;
+        margin: 39px auto;
+        border-radius: 24px;
+    }
+    .cartes img {
+        width: 62%;
+        height: 100%;
+        border-radius: 13px;
+        position: relative;
+    }
+    figcaption {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 7px 18px 7px 10px;
+        width: 36%;
+    }
+    .fa-solid.fa-heart {
+        font-size: 7vh;
+    }
+    .cartes .new-card::before {
+        content: "Nouveau";
+        text-align: center;
+        vertical-align: middle;
+        line-height: 50px;
+        width: 150px;
+        height: 50px;
+        background-color: #99e2d0;
+        color: #296557;
+        opacity: 0.8;
+        font-weight: bold;
+        font-size: 27px;
+        position: absolute;
+        z-index: 2;
+        border-radius: 12px;
+        transform: translate(10px, 10px);
+    }
 }
+
 /*desktop*/
 @media only screen and (min-width: 992px) {
     h1 {
         font-size: 3vw;
-        padding: 0 1vw;
+        padding: 0;
         text-align: left;
     }
     h2 {
@@ -320,31 +423,35 @@ footer a {
         margin-bottom: -5px;
     }
     header {
-        height: 10%;
+        height: 7vh;
+        background-color: #eaeaea;
+        float: left;
     }
     header img {
-        width: 20vw;
+        width: 10vw;
         padding: 10px;
         margin: 0;
-        }
     }
+
     form {
         position: relative;
         display: flex;
         flex-flow: row nowrap;
-        justify-content: flex-start;
+        justify-content: flex-end;
         width: 100%;
-        background-color: white;
+        background-color: #eaeaea;
     }
     input {
-        width: 22%;
+        width: 30%;
         height: 7vh;
-        text-align: center;
-        border-radius: 0 20px 20px 0;
+        text-align: left;
+        border-radius: 20px;
+        padding: 10px;
+        margin-right: 3vw;
+        border: 1px solid grey;
     }
     .fa-location-dot {
-        left: 1vw;
-        top: 2vh;
+        visibility: hidden;
     }
     .presentation p {
         font-size: 20px;
@@ -355,6 +462,7 @@ footer a {
     button {
         width: 296px;
         height: 74px;
+        margin: 4vh 0 0;
     }
     aside {
         padding: 37px 10px;
@@ -415,7 +523,6 @@ footer a {
         z-index: 2;
         border-radius: 12px;
         transform: translate(10px, 10px);
-}
     }
     footer h2 {
         font-size: 30px;
