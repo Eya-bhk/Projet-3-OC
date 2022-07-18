@@ -16,12 +16,7 @@ body {
     animation-delay: 2s;
     animation-fill-mode: forwards;
 }
-@keyframes body-set {
-    100% {
-        position: unset;
-        overflow: visible;
-    }
-}
+
 .loader {
     position: absolute;
     top: 0;
@@ -36,11 +31,7 @@ body {
     animation-timing-function: linear;
     animation-fill-mode: forwards;
 }
-@keyframes spinner-disappear {
-    100% {
-        position: unset;
-    }
-}
+
 .container {
     position: absolute;
     top: 0;
@@ -148,12 +139,19 @@ button {
     height: 50px;
     color: white;
     font-weight: bold;
+    display: block;
     margin: auto;
     border-radius: 31px;
-    border: none;
+    border: transparent;
     background-color: #9356dc;
     box-shadow: 2px 5px 5px 3px #8080803d;
     background-image: linear-gradient(174deg, #ff79da, transparent);
+    transition: all 0.5s;
+}
+
+button:hover {
+    background-color: #9356dcb0;
+    box-shadow: 2px 5px 5px 3px #8080805c;
 }
 /*aside start*/
 aside {
@@ -224,7 +222,7 @@ aside li span {
 .cartes img {
     width: 100%;
     height: 175px;
-    border-radius: 13px;
+    border-radius: 13px 13px 0 0;
     position: relative;
 }
 .cartes .new-card::before {
@@ -239,9 +237,21 @@ aside li span {
     font-weight: bold;
     font-size: 15px;
     position: absolute;
-    z-index: 2;
+    /*z-index: 2;*/
     border-radius: 3px;
     transform: translate(242px, 14px);
+    animation-name: z-index-rise;
+    animation-duration: 0s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+@keyframes z-index-rise {
+    0% {
+        z-index: -1;
+    }
+    100% {
+        z-index: 2;
+    }
 }
 figcaption {
     display: flex;
@@ -253,10 +263,21 @@ figcaption {
 .fa-heart {
     color: white;
     text-shadow: 0px 0px 1px black;
-    /*transition: color 1s ease 0s;*/
 }
-.fa-heart:active {
-    color: #9356dc;
+.fa-heart::before {
+    display: inline;
+}
+.fa-heart:hover {
+    text-shadow: none;
+    background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(#ff79da),
+        to(#9356dc)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     animation-name: filling-heart;
     animation-duration: 1s;
     animation-timing-function: linear;
@@ -284,22 +305,21 @@ footer li .fa-solid {
 footer a {
     color: white;
 }
+@keyframes body-set {
+    100% {
+        position: unset;
+        overflow: visible;
+    }
+}
+@keyframes spinner-disappear {
+    100% {
+        position: unset;
+    }
+}
 @keyframes filling-heart {
     0% {
         color: #ff79da;
         opacity: 0;
-    }
-    25% {
-        color: #ff79da;
-        opacity: 0.5;
-    }
-    50% {
-        color: #ff79da;
-        opacity: 0.8;
-    }
-    70% {
-        color: #9356dc;
-        opacity: 0.8;
     }
     100% {
         color: #9356dc;
@@ -320,6 +340,9 @@ footer a {
         padding: 0;
         text-align: left;
     }
+    h3 {
+        font-size: 20px;
+    }
     header {
         height: 5vh;
         background-color: #eaeaea;
@@ -335,12 +358,15 @@ footer a {
         display: flex;
         flex-flow: row nowrap;
         justify-content: flex-end;
+        align-items: center;
         width: 100%;
+        height: 5vh;
         background-color: #eaeaea;
     }
     input {
         width: 30%;
-        height: 5vh;
+        height: 3vh;
+        background-color: white;
         text-align: left;
         border-radius: 20px;
         padding: 10px;
@@ -375,7 +401,7 @@ footer a {
     .cartes img {
         width: 62%;
         height: 100%;
-        border-radius: 13px;
+        border-radius: 13px 0 0 13px;
         position: relative;
     }
     figcaption {
@@ -387,7 +413,7 @@ footer a {
         width: 36%;
     }
     .fa-solid.fa-heart {
-        font-size: 7vh;
+        font-size: 3vh;
     }
     .cartes .new-card::before {
         content: "Nouveau";
@@ -402,7 +428,6 @@ footer a {
         font-weight: bold;
         font-size: 27px;
         position: absolute;
-        z-index: 2;
         border-radius: 12px;
         transform: translate(10px, 10px);
     }
@@ -434,16 +459,10 @@ footer a {
     }
 
     form {
-        position: relative;
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: flex-end;
-        width: 100%;
-        background-color: #eaeaea;
+        height: 7vh;
     }
     input {
         width: 30%;
-        height: 7vh;
         text-align: left;
         border-radius: 20px;
         padding: 10px;
@@ -476,7 +495,7 @@ footer a {
         width: 309px;
     }
     .header-icons .fa-solid {
-        font-size: 4vh;
+        font-size: 1vh;
     }
     .cartes {
         padding: 21px 10px;
@@ -493,7 +512,6 @@ footer a {
     .cartes img {
         width: 62%;
         height: 100%;
-        border-radius: 13px;
         position: relative;
     }
     figcaption {
@@ -503,42 +521,5 @@ footer a {
         align-items: center;
         padding: 7px 18px 7px 10px;
         width: 36%;
-    }
-    .fa-solid.fa-heart {
-        font-size: 7vh;
-    }
-    .cartes .new-card::before {
-        content: "Nouveau";
-        text-align: center;
-        vertical-align: middle;
-        line-height: 50px;
-        width: 150px;
-        height: 50px;
-        background-color: #99e2d0;
-        color: #296557;
-        opacity: 0.8;
-        font-weight: bold;
-        font-size: 27px;
-        position: absolute;
-        z-index: 2;
-        border-radius: 12px;
-        transform: translate(10px, 10px);
-    }
-    footer h2 {
-        font-size: 30px;
-        margin-bottom: 4px;
-    }
-    footer ul {
-        font-size: 20px;
-    }
-    footer li .fa-solid {
-        margin-right: 2vw;
-        font-size: 4vh;
-    }
-    .fa-heart:hover {
-        color: #9356dc;
-        animation-name: filling-heart;
-        animation-duration: 1s;
-        animation-timing-function: linear;
     }
 }

@@ -34,8 +34,8 @@ h2 {
     position: relative;
 }
 h3 {
-    font-size: 16px;
-    margin-bottom: -11px;
+    font-size: 0.8rem;
+    margin-top: 5px;
 }
 a {
     text-decoration: none;
@@ -98,7 +98,6 @@ main {
 main section {
     padding: 15px;
 }
-
 main h2::after {
     content: "";
     width: 40px;
@@ -108,23 +107,34 @@ main h2::after {
     top: 25px;
     left: 0;
 }
+section ul {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-evenly;
+    /*height: 27vh;*/
+}
 section li {
-    width: 350px;
+    width: 96%;
     height: 70px;
-    padding-left: 20px;
     background-color: white;
     border-radius: 20px;
     box-shadow: 0px 2px 7px -2px #f6f6f6;
     margin-top: 17px;
-}
-section li a {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
     position: relative;
+    cursor: pointer;
 }
 section li p {
     opacity: 0.6;
+    margin: 0;
+    font-size: 0.7rem;
+    /*transition: all 2s 0s ease; 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;*/
 }
 .entree h2 {
     animation-name: list-advent;
@@ -133,7 +143,7 @@ section li p {
     animation-fill-mode: both;
     animation-timing-function: ease;
 }
-.entree li a {
+.entree li {
     animation-name: list-advent, list-translate;
     animation-duration: 1s;
     animation-delay: 0.4s;
@@ -170,21 +180,29 @@ section li p {
 }
 section li div {
     width: 70%;
+    display: flex;
+    flex-flow: column;
+    padding: 1vh;
+}
+section li div:hover p {
+    overflow: visible;
+    font-size: 0.6rem;
 }
 .entree-price,
 .dish-price,
 .sweet-price {
     margin: 0 20px;
+    padding-bottom: 1vh;
     transition: all 1s 0s ease;
 }
-section li a:active .entree-price,
-section li a:active .dish-price,
-section li a:active .sweet-price {
+section li:hover .entree-price,
+section li:hover .dish-price,
+section li:hover .sweet-price {
     transform: translate(-10px, 0px);
     margin: 5px;
     padding: 5px;
 }
-main li a .check {
+main li .check {
     width: 0px;
     height: 70px;
     display: flex;
@@ -192,7 +210,7 @@ main li a .check {
     align-items: center;
     color: white;
     overflow: hidden;
-    background-color: none;
+    background-color: transparent;
     border-radius: 0 20px 20px 0;
     position: relative;
     right: 0;
@@ -209,20 +227,20 @@ main li a .check {
     height: 15px;
     transition: all 1s 0s ease;
 }
-main li a:active > .check {
+main li:hover > .check {
     width: 60px;
     background-color: #99e2d0;
 }
-section li a:active > .check i {
+section li:hover > .check i {
     animation: icon-rotate 1s 0s ease;
     animation-fill-mode: forwards;
 }
-section li a:active > div h3 {
+section li:hover > div h3 {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
 }
-section li a:active > div p {
+section li:hover > div p {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -237,10 +255,15 @@ button {
     display: block;
     margin: 50px auto 85px;
     border-radius: 31px;
-    border: none;
+    border: transparent;
     background-color: #9356dc;
     box-shadow: 2px 5px 5px 3px #8080803d;
-    background-image: linear-gradient(174deg, #ff79da, #9356dc);
+    background-image: linear-gradient(174deg, #ff79da, transparent);
+    transition: all 0.5s;
+}
+button:hover {
+    background-color: #9356dcb0;
+    box-shadow: 2px 5px 5px 3px #8080805c;
 }
 /*footer start*/
 footer h2 {
@@ -306,9 +329,12 @@ footer a {
         color: black;
         font-size: 50px;
     }
+    section ul {
+        height: 27vh;
+    }
     section li {
-        width: 80%;
-        margin: 17px auto;
+        width: 96%;
+        height: 70px;
     }
 }
 /*desktop*/
@@ -318,31 +344,5 @@ footer a {
     }
     h1 {
         font-size: 5vw;
-    }
-    section li a:hover .entree-price,
-    section li a:hover .dish-price,
-    section li a:hover .sweet-price {
-        transform: translate(-10px, 0px);
-        margin: 5px;
-        padding: 5px;
-    }
-    main li a:hover > .check {
-        width: 60px;
-        background-color: #99e2d0;
-    }
-    section li a:hover > .check i {
-        animation: icon-rotate 1s 0s ease;
-        animation-fill-mode: forwards;
-    }
-    section li a:hover > div h3 {
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-    }
-    section li a:hover > div p {
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        margin-right: 5px;
     }
 }
