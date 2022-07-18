@@ -11,9 +11,13 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    -webkit-animation-name: body-set;
     animation-name: body-set;
+    -webkit-animation-duration: 0s;
     animation-duration: 0s;
+    -webkit-animation-delay: 2s;
     animation-delay: 2s;
+    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
 
@@ -25,10 +29,15 @@ body {
     height: 100%;
     background-color: #eaeaea;
     z-index: 1;
+    -webkit-animation-name: spinner-disappear;
     animation-name: spinner-disappear;
+    -webkit-animation-duration: 0s;
     animation-duration: 0s;
+    -webkit-animation-delay: 2.2s;
     animation-delay: 2.2s;
+    -webkit-animation-timing-function: linear;
     animation-timing-function: linear;
+    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
 
@@ -49,9 +58,13 @@ body {
     border: 5px solid #eee;
     border-left-color: #ff79da;
     border-right-color: #ff79da;
+    -webkit-animation-name: loader-spin;
     animation-name: loader-spin;
+    -webkit-animation-duration: 2s;
     animation-duration: 2s;
+    -webkit-animation-timing-function: linear;
     animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
     animation-iteration-count: 1;
 }
 .fa-heart,
@@ -84,6 +97,7 @@ a {
     color: black;
 }
 img {
+    -o-object-fit: cover;
     object-fit: cover;
 }
 /*header*/
@@ -240,10 +254,22 @@ aside li span {
     /*z-index: 2;*/
     border-radius: 3px;
     transform: translate(242px, 14px);
+    -webkit-animation-name: z-index-rise;
     animation-name: z-index-rise;
+    -webkit-animation-duration: 0s;
     animation-duration: 0s;
+    -webkit-animation-delay: 2s;
     animation-delay: 2s;
+    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+}
+@-webkit-keyframes z-index-rise {
+    0% {
+        z-index: -1;
+    }
+    100% {
+        z-index: 2;
+    }
 }
 @keyframes z-index-rise {
     0% {
@@ -277,9 +303,13 @@ figcaption {
         to(#9356dc)
     );
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
+    -webkit-animation-name: filling-heart;
     animation-name: filling-heart;
+    -webkit-animation-duration: 1s;
     animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
     animation-timing-function: linear;
 }
 /*footer start*/
@@ -305,15 +335,35 @@ footer li .fa-solid {
 footer a {
     color: white;
 }
+@-webkit-keyframes body-set {
+    100% {
+        position: unset;
+        overflow: visible;
+    }
+}
 @keyframes body-set {
     100% {
         position: unset;
         overflow: visible;
     }
 }
+@-webkit-keyframes spinner-disappear {
+    100% {
+        position: unset;
+    }
+}
 @keyframes spinner-disappear {
     100% {
         position: unset;
+    }
+}
+@-webkit-keyframes filling-heart {
+    0% {
+        color: #ff79da;
+        opacity: 0;
+    }
+    100% {
+        color: #9356dc;
     }
 }
 @keyframes filling-heart {
@@ -323,6 +373,14 @@ footer a {
     }
     100% {
         color: #9356dc;
+    }
+}
+@-webkit-keyframes loader-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }
 @keyframes loader-spin {
@@ -392,7 +450,7 @@ footer a {
         width: 75%;
         height: 313px;
         display: flex;
-        justify-content: start;
+        justify-content: flex-start;
         align-items: center;
         background-color: white;
         margin: 39px auto;
@@ -495,7 +553,7 @@ footer a {
         width: 309px;
     }
     .header-icons .fa-solid {
-        font-size: 1vh;
+        font-size: 2vh;
     }
     .cartes {
         padding: 21px 10px;
@@ -504,7 +562,7 @@ footer a {
         width: 75%;
         height: 313px;
         display: flex;
-        justify-content: start;
+        justify-content: flex-start;
         align-items: center;
         background-color: white;
         margin: 39px auto;

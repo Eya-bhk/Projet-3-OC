@@ -42,11 +42,8 @@ a {
     color: black;
 }
 img {
+    -o-object-fit: cover;
     object-fit: cover;
-}
-.fa-solid {
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
 }
 /*header*/
 header {
@@ -127,67 +124,101 @@ section li {
     position: relative;
     cursor: pointer;
 }
+.entree h2 {
+    -webkit-animation-name: list-advent;
+    animation-name: list-advent;
+    -webkit-animation-duration: 0.2s;
+    animation-duration: 0.2s;
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease;
+}
+.entree li {
+    -webkit-animation-name: list-advent, list-translate;
+    animation-name: list-advent, list-translate;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.principal-dish h2 {
+    -webkit-animation-name: list-advent;
+    animation-name: list-advent;
+    -webkit-animation-duration: 0.2s;
+    animation-duration: 0.2s;
+    -webkit-animation-delay: 1.4s;
+    animation-delay: 1.4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease;
+}
+.principal-dish li {
+    -webkit-animation-name: list-advent, list-translate;
+    animation-name: list-advent, list-translate;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: 1.6s;
+    animation-delay: 1.6s;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.sweet h2 {
+    -webkit-animation-name: list-advent;
+    animation-name: list-advent;
+    -webkit-animation-duration: 0.2s;
+    animation-duration: 0.2s;
+    -webkit-animation-delay: 2.6s;
+    animation-delay: 2.6s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease;
+}
+.sweet li {
+    -webkit-animation-name: list-advent, list-translate;
+    animation-name: list-advent, list-translate;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: 2.8s;
+    animation-delay: 2.8s;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+section li div {
+    width: 77%;
+    display: flex;
+    flex-flow: column;
+    padding: 1vh;
+    transition: width 0.9s ease;
+}
+section li:hover > div {
+    width: 70%;
+}
 section li p {
-    opacity: 0.6;
+    opacity: 0.7;
     margin: 0;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     /*transition: all 2s 0s ease; 
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;*/
 }
-.entree h2 {
-    animation-name: list-advent;
-    animation-duration: 0.2s;
-    animation-delay: 0.2s;
-    animation-fill-mode: both;
-    animation-timing-function: ease;
-}
-.entree li {
-    animation-name: list-advent, list-translate;
-    animation-duration: 1s;
-    animation-delay: 0.4s;
-    animation-timing-function: ease;
-    animation-fill-mode: both;
-}
-.principal-dish h2 {
-    animation-name: list-advent;
-    animation-duration: 0.2s;
-    animation-delay: 1.4s;
-    animation-fill-mode: both;
-    animation-timing-function: ease;
-}
-.principal-dish li {
-    animation-name: list-advent, list-translate;
-    animation-duration: 1s;
-    animation-delay: 1.6s;
-    animation-timing-function: ease;
-    animation-fill-mode: both;
-}
-.sweet h2 {
-    animation-name: list-advent;
-    animation-duration: 0.2s;
-    animation-delay: 2.6s;
-    animation-fill-mode: both;
-    animation-timing-function: ease;
-}
-.sweet li {
-    animation-name: list-advent, list-translate;
-    animation-duration: 1s;
-    animation-delay: 2.8s;
-    animation-timing-function: ease;
-    animation-fill-mode: both;
-}
-section li div {
-    width: 70%;
-    display: flex;
-    flex-flow: column;
-    padding: 1vh;
-}
-section li div:hover p {
+/*section li div:hover p {
     overflow: visible;
     font-size: 0.6rem;
-}
+}*/
 .entree-price,
 .dish-price,
 .sweet-price {
@@ -232,7 +263,9 @@ main li:hover > .check {
     background-color: #99e2d0;
 }
 section li:hover > .check i {
+    -webkit-animation: icon-rotate 1s 0s ease;
     animation: icon-rotate 1s 0s ease;
+    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
 section li:hover > div h3 {
@@ -253,6 +286,7 @@ button {
     font-size: 17px;
     font-weight: bold;
     display: block;
+    visibility: hidden;
     margin: 50px auto 85px;
     border-radius: 31px;
     border: transparent;
@@ -260,6 +294,16 @@ button {
     box-shadow: 2px 5px 5px 3px #8080803d;
     background-image: linear-gradient(174deg, #ff79da, transparent);
     transition: all 0.5s;
+    -webkit-animation-name: button-advent;
+    animation-name: button-advent;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-delay: 3.4s;
+    animation-delay: 3.4s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
 }
 button:hover {
     background-color: #9356dcb0;
@@ -290,6 +334,14 @@ footer li .fa-solid {
 footer a {
     color: white;
 }
+@-webkit-keyframes list-advent {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 @keyframes list-advent {
     0% {
         opacity: 0;
@@ -298,9 +350,50 @@ footer a {
         opacity: 1;
     }
 }
+@-webkit-keyframes button-advent {
+    0% {
+        visibility: hidden;
+        opacity: 0;
+    }
+    50% {
+        visibility: initial;
+        opacity: 0.5;
+    }
+    100% {
+        visibility: initial;
+        opacity: initial;
+    }
+}
+@keyframes button-advent {
+    0% {
+        visibility: hidden;
+        opacity: 0;
+    }
+    50% {
+        visibility: initial;
+        opacity: 0.5;
+    }
+    100% {
+        visibility: initial;
+        opacity: initial;
+    }
+}
+@-webkit-keyframes list-translate {
+    100% {
+        transform: translate(0px, -5px);
+    }
+}
 @keyframes list-translate {
     100% {
         transform: translate(0px, -5px);
+    }
+}
+@-webkit-keyframes icon-rotate {
+    0% {
+        transform: rotate(-180deg);
+    }
+    100% {
+        transform: rotate(1turn);
     }
 }
 @keyframes icon-rotate {
@@ -328,9 +421,6 @@ footer a {
     .heart :last-child {
         color: black;
         font-size: 50px;
-    }
-    section ul {
-        height: 27vh;
     }
     section li {
         width: 96%;
