@@ -423,7 +423,7 @@ footer a {
     }
     input {
         width: 30%;
-        height: 3vh;
+        height: 4vh;
         background-color: white;
         text-align: left;
         border-radius: 20px;
@@ -471,7 +471,7 @@ footer a {
         width: 36%;
     }
     .fa-solid.fa-heart {
-        font-size: 3vh;
+        font-size: 4vh;
     }
     .cartes .new-card::before {
         content: "Nouveau";
@@ -494,15 +494,15 @@ footer a {
 /*desktop*/
 @media only screen and (min-width: 992px) {
     h1 {
-        font-size: 3vw;
+        font-size: 2.2rem;
         padding: 0;
         text-align: left;
     }
     h2 {
-        font-size: 30px;
+        font-size: 1.8rem;
     }
     h3 {
-        font-size: 30px;
+        font-size: 1.5rem;
         margin-bottom: -5px;
     }
     header {
@@ -560,7 +560,7 @@ footer a {
     }
     .cartes figure {
         width: 75%;
-        height: 313px;
+        height: 35vh;
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -579,5 +579,10 @@ footer a {
         align-items: center;
         padding: 7px 18px 7px 10px;
         width: 36%;
+    }
+    .fa-1,
+    .fa-2,
+    .fa-3 {
+        transform: translate(-35px, 0);
     }
 }
