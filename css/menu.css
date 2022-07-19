@@ -200,7 +200,7 @@ section li div {
     width: 77%;
     display: flex;
     flex-flow: column;
-    padding: 1vh;
+    padding: 1.5vh 0 1.5vh 2vw;
     transition: width 0.9s ease;
 }
 section li:hover > div {
@@ -210,15 +210,15 @@ section li p {
     opacity: 0.7;
     margin: 0;
     font-size: 0.8rem;
-    /*transition: all 2s 0s ease; 
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;*/
+    text-overflow: ellipsis;
+    transition: all 2s 0s ease;
 }
-/*section li div:hover p {
+section li div:hover p {
     overflow: visible;
-    font-size: 0.6rem;
-}*/
+    white-space: normal;
+}
 .entree-price,
 .dish-price,
 .sweet-price {
