@@ -209,7 +209,7 @@ section li:hover > div {
 section li p {
     opacity: 0.7;
     margin: 0;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -360,7 +360,6 @@ footer a {
         transform: translate(0px, -5px);
     }
 }
-
 @-webkit-keyframes icon-rotate {
     0% {
         transform: rotate(-180deg);
