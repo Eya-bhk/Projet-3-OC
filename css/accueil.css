@@ -203,6 +203,7 @@ aside li span {
 .fa-1,
 .fa-2,
 .fa-3 {
+    font-family: "Roboto", sans-serif !important;
     width: 22px;
     height: 23px;
     text-align: center;
@@ -214,7 +215,8 @@ aside li span {
 .fa-1:before,
 .fa-2:before,
 .fa-3:before {
-    line-height: 20px;
+    font-size: 14px;
+    line-height: 22px;
     vertical-align: middle;
 }
 .header-icons .fa-solid {
