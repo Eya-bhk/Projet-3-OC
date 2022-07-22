@@ -209,7 +209,7 @@ section li:hover > div {
 section li p {
     opacity: 0.7;
     margin: 0;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
